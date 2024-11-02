@@ -2,10 +2,29 @@ $(document).ready(function() {
 
 	'use strict';
 
+	$( "#contactForm" ).validate( {
+		rules: {
+			name: "required",
+			email: {
+				required: true,
+				email: true
+			},
+			message: {
+				required: true,
+				minlength: 5
+			}
+		},
+		messages: {
+			name: "nome é obrigatório",
+			email: "nome é obrigatório",
+			message: "mensagem é obrigatória"
+		}
+	});
+
 	$('#contactForm').submit(function(e) {
 		e.preventDefault(); // Prevent default form submission
 		console.log("#contactForm submit");
-		console.log( $("#contactForm").serialize() );
+		//console.log( $("#contactForm").serialize() );
 	});
 
 
