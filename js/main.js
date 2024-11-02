@@ -21,12 +21,12 @@ $(function() {
 				messages: {
 					name: "nome é obrigatório",
 					email: "nome é obrigatório",
-					message: "mensagem é obrigatório"
+					message: "mensagem é obrigatória"
 				},
 				/* submit via ajax */
 				submitHandler: function(form) {		
 					var $submit = $('.submitting'),
-						waitText = 'A guardar...';
+						waitText = 'A enviar...';
 
 					$.ajax({   	
 				      type: "POST",
@@ -53,7 +53,7 @@ $(function() {
 			            }
 				      },
 				      error: function() {
-				      	$('#form-message-warning').html("Mensagem não registada");
+				      	$('#form-message-warning').html("Mensagem não enviada.");
 				         $('#form-message-warning').fadeIn();
 				         $submit.css('display', 'none');
 				      }
