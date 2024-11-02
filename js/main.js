@@ -4,16 +4,15 @@ $(function() {
 
 	// Form
 	var contactForm = function() {
-
 		if ($('#contactForm').length > 0 ) {
-			$( "#contactFormx" ).validate( {
+			$( "#contactForm" ).validate( {
 				rules: {
-					name: "required",
-					email: {
+					xname: "required",
+					xemail: {
 						required: true,
 						email: true
 					},
-					message: {
+					xmessage: {
 						required: true,
 						minlength: 5
 					}
@@ -65,5 +64,5 @@ $(function() {
 		}
 	};
 	contactForm();
-
+	console.log("ready");
 });
