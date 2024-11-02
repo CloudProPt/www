@@ -3,7 +3,6 @@ $(function() {
 	'use strict';
 
 	// Form
-
 	var contactForm = function() {
 
 		if ($('#contactForm').length > 0 ) {
@@ -27,11 +26,11 @@ $(function() {
 				/* submit via ajax */
 				submitHandler: function(form) {		
 					var $submit = $('.submitting'),
-						waitText = 'Submitting...';
+						waitText = 'A guardar...';
 
 					$.ajax({   	
 				      type: "POST",
-				      url: "php/send-email.php",
+				      url: "https://www2.cloudpro.pt/contactform.php",
 				      data: $(form).serialize(),
 
 				      beforeSend: function() { 
@@ -54,7 +53,7 @@ $(function() {
 			            }
 				      },
 				      error: function() {
-				      	$('#form-message-warning').html("Something went wrong. Please try again.");
+				      	$('#form-message-warning').html("Mensagem não registada");
 				         $('#form-message-warning').fadeIn();
 				         $submit.css('display', 'none');
 				      }
