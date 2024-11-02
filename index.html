@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="css/style.css">
 
     <title>cloudopro.pt</title>
+
+    <!-- include the cloudflare turnstile library here  -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+
   </head>
   <body>
   
@@ -39,6 +43,7 @@
             <div class="col-md-6">
               
               <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAAzDHEhqEIDuTYdR"></div>
                 <div class="row">
                   <div class="col-md-12 form-group">
                     <input type="text" class="form-control" name="name" id="name" placeholder="nome">
@@ -68,9 +73,7 @@
               </form>
 
               <div id="form-message-warning mt-4"></div> 
-              <div id="form-message-success">
-                A sua mensagem foi registada ! Obrigado.
-              </div>
+              <div id="form-message-success">A sua mensagem foi registada ! Obrigado.</div>
             </div>
           </div>
         </div>
@@ -78,6 +81,8 @@
     </div>
 
   </div>
+
+</div>
     
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>

@@ -6,7 +6,7 @@ $(function() {
 	var contactForm = function() {
 
 		if ($('#contactForm').length > 0 ) {
-			$( "#contactForm" ).validate( {
+			$( "#contactFormx" ).validate( {
 				rules: {
 					name: "required",
 					email: {
