@@ -1,9 +1,15 @@
-$(function() {
+$(document).ready(function() {
 
 	'use strict';
 
+	$('#contactForm').submit(function(e) {
+		e.preventDefault(); // Prevent default form submission
+		console.log("#contactForm submit");
+	});
+
+
 	// Form
-	var contactForm = function() {
+	/* var contactForm = function() {
 		if ($('#contactForm').length > 0 ) {
 			$( "#contactForm" ).validate( {
 				rules: {
@@ -22,7 +28,7 @@ $(function() {
 					email: "nome é obrigatório",
 					message: "mensagem é obrigatória"
 				},
-				/* submit via ajax */
+				// submit via ajax 
 				submitHandler: function(form) {		
 					var $submit = $('.submitting'),
 						waitText = 'A enviar...';
@@ -63,6 +69,9 @@ $(function() {
 			} );
 		}
 	};
-	contactForm();
+	// contactForm();
+	*/
+
+
 	console.log("ready");
 });
