@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	'use strict';
 
-var contactForm_submit = function(form){
+	function contactForm_submit(form){
 		form.preventDefault(); // Prevent default form submission
 		console.log("#contactForm submit");
 		//console.log( $("#contactForm").serialize() );
@@ -20,9 +20,9 @@ var contactForm_submit = function(form){
 			},
 			success: function(msg) {
 				console.log(msg);
-			 	if (msg == 'OK') {
+				if (msg == 'OK') {
 					$('#form-message-warning').hide();
-				  	setTimeout(function(){
+					setTimeout(function(){
 						$('#contactForm').fadeOut();
 					}, 1000);
 					setTimeout(function(){
@@ -41,7 +41,7 @@ var contactForm_submit = function(form){
 			}
 		});    		
 	};
-	
+
 	$( "#contactForm" ).validate( {
 		rules: {
 			name: "required",
@@ -59,7 +59,9 @@ var contactForm_submit = function(form){
 			email: "email é obrigatório ou está incorrecto",
 			message: "mensagem é obrigatória"
 		},
-		submitHandler: contactForm_submit
+		submitHandler:  function(form) {	
+			contactForm_submit(form);
+		}
 	});
 
 	// Form
