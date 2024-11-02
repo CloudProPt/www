@@ -2,31 +2,12 @@ $(document).ready(function() {
 
 	'use strict';
 
-	$( "#contactForm" ).validate( {
-		rules: {
-			name: "required",
-			email: {
-				required: true,
-				email: true
-			},
-			message: {
-				required: true,
-				minlength: 5
-			}
-		},
-		messages: {
-			name: "nome é obrigatório",
-			email: "email é obrigatório ou está incorrecto",
-			message: "mensagem é obrigatória"
-		}
-	});
-
-	$('#contactForm').submit(function(e) {
-		e.preventDefault(); // Prevent default form submission
+var contactForm_submit = function(form){
+		form.preventDefault(); // Prevent default form submission
 		console.log("#contactForm submit");
 		//console.log( $("#contactForm").serialize() );
 
-		var submit = $('.submitting')
+		var submit = $('.submitting');
 		var waitText = 'A enviar...';
 
 		$.ajax({   	
@@ -59,8 +40,27 @@ $(document).ready(function() {
 				submit.css('display', 'none');
 			}
 		});    		
+	};
+	
+	$( "#contactForm" ).validate( {
+		rules: {
+			name: "required",
+			email: {
+				required: true,
+				email: true
+			},
+			message: {
+				required: true,
+				minlength: 5
+			}
+		},
+		messages: {
+			name: "nome é obrigatório",
+			email: "email é obrigatório ou está incorrecto",
+			message: "mensagem é obrigatória"
+		},
+		submitHandler: contactForm_submit
 	});
-
 
 	// Form
 	/* var contactForm = function() {
