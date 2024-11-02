@@ -37,6 +37,7 @@ $(function() {
 				      	$submit.css('display', 'block').text(waitText);
 				      },
 				      success: function(msg) {
+						console.log(msg);
 		               if (msg == 'OK') {
 		               	$('#form-message-warning').hide();
 				            setTimeout(function(){
