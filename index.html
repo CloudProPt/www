@@ -19,7 +19,7 @@
 
     <!-- include the cloudflare turnstile library here  -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
-
+    
   </head>
   <body>
   <div class="content">
@@ -37,7 +37,6 @@
 
             <div class="col-md-6">  
               <form class="mb-5" method="post" id="contactForm" name="contactForm">
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAAAzDHEhqEIDuTYdR"></div>
                 <div class="row">
                   <div class="col-md-12 form-group">
                     <input type="text" class="form-control" name="name" id="name" placeholder="nome">
@@ -64,6 +63,7 @@
                   <span class="submitting"></span>
                   </div>
                 </div>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAAzDHEhqEIDuTYdR"></div>
               </form>
 
               <div id="form-message-warning mt-4"></div> 
