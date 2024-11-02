@@ -7,7 +7,6 @@ $(document).ready(function() {
     });
 
 	function contactForm_submit(form){
-		form.preventDefault(); // Prevent default form submission
 		console.log("#contactForm submit");
 		//console.log( $("#contactForm").serialize() );
 
