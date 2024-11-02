@@ -2,6 +2,10 @@ $(document).ready(function() {
 
 	'use strict';
 
+	$("#contactForm").on("submit", function(event) {
+        event.preventDefault(); // Evita o comportamento padrão de envio
+    });
+
 	function contactForm_submit(form){
 		form.preventDefault(); // Prevent default form submission
 		console.log("#contactForm submit");
