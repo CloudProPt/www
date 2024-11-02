@@ -19,9 +19,9 @@ $(function() {
 					}
 				},
 				messages: {
-					name: "Please enter your name",
-					email: "Please enter a valid email address",
-					message: "Please enter a message"
+					name: "nome é obrigatório",
+					email: "nome é obrigatório",
+					message: "mensagem é obrigatório"
 				},
 				/* submit via ajax */
 				submitHandler: function(form) {		
