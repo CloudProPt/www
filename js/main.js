@@ -32,7 +32,7 @@ $(document).ready(function() {
 		$.ajax({   	
 			type: "POST",
 			url: "https://www2.cloudpro.pt/contactform.php",
-			data: $(form).serialize(),
+			data: $("#contactForm").serialize(),
 
 			beforeSend: function() { 
 				submit.css('display', 'block').text(waitText);
