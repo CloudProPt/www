@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 		$.ajax({   	
 			type: "POST",
-			url: "https://www2.cloudpro.pt/contactform.php",
+			url: "https://www2.cloudpro.pt/contactform1519.php",
 			data: $("#contactForm").serialize(),
 
 			beforeSend: function() { 
