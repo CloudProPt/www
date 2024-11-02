@@ -16,7 +16,7 @@ $(document).ready(function() {
 		},
 		messages: {
 			name: "nome é obrigatório",
-			email: "nome é obrigatório",
+			email: "email é obrigatório ou está incorrecto",
 			message: "mensagem é obrigatória"
 		}
 	});
@@ -25,6 +25,40 @@ $(document).ready(function() {
 		e.preventDefault(); // Prevent default form submission
 		console.log("#contactForm submit");
 		//console.log( $("#contactForm").serialize() );
+
+		var submit = $('.submitting')
+		var waitText = 'A enviar...';
+
+		$.ajax({   	
+			type: "POST",
+			url: "https://www2.cloudpro.pt/contactform.php",
+			data: $(form).serialize(),
+
+			beforeSend: function() { 
+				submit.css('display', 'block').text(waitText);
+			},
+			success: function(msg) {
+				console.log(msg);
+			 	if (msg == 'OK') {
+					$('#form-message-warning').hide();
+				  	setTimeout(function(){
+						$('#contactForm').fadeOut();
+					}, 1000);
+					setTimeout(function(){
+						$('#form-message-success').fadeIn();   
+					}, 1400); 
+				} else {
+					$('#form-message-warning').html(msg);
+					$('#form-message-warning').fadeIn();
+					submit.css('display', 'none');
+				}
+			},
+			error: function() {
+				$('#form-message-warning').html("Mensagem não enviada.");
+				$('#form-message-warning').fadeIn();
+				submit.css('display', 'none');
+			}
+		});    		
 	});
 
 
